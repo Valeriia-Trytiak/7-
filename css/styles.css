@@ -362,15 +362,56 @@ img {
   padding: 188px 0px;
   max-width: 1440px;
 
-  background-image: linear-gradient(var(--background-gradient), var(--background-gradient)),
-    url(../images/section-hero/hero-people-office.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   background-color: var(--background-color-dark);
+  background-image: linear-gradient(var(--background-gradient), var(--background-gradient)),
+    url(../images/section-hero/hero-bg_mob@1x.jpg);
 }
 
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .page-hero {
+    background-image: linear-gradient(var(--background-gradient), var(--background-gradient)),
+      url(../images/section-hero/hero-bg_mob@2x.jpg);
+  }
+}
+/**
+  |============================
+  | Tablet-bg
+  |============================
+*/
+@media only screen and (min-width: 481px) {
+  .page-hero {
+    background-image: linear-gradient(var(--background-gradient), var(--background-gradient)),
+      url(../images/section-hero/hero-bg_tab@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .page-hero {
+      background-image: linear-gradient(var(--background-gradient), var(--background-gradient)),
+        url(../images/section-hero/hero-bg_tab@2x.jpg);
+    }
+  }
+}
+
+/**
+  |============================
+  | Desktop-bg
+  |============================
+*/
+@media only screen and (min-width: 769px) {
+  .page-hero {
+    background-image: linear-gradient(var(--background-gradient), var(--background-gradient)),
+      url(../images/section-hero/hero-bg_desk@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .page-hero {
+      background-image: linear-gradient(var(--background-gradient), var(--background-gradient)),
+        url(../images/section-hero/hero-bg_desk@2x.jpg);
+    }
+  }
+}
 .hero-container {
   display: block;
   margin-left: auto;
@@ -535,7 +576,7 @@ img {
 
 .media-social {
   --items: 4;
-
+  width: 232px;
   min-height: 40px;
   padding-right: 16px;
   padding-left: 16px;
@@ -1255,9 +1296,6 @@ img {
   outline: none;
 }
 @media (min-width: 768px) {
-  .menu-container {
-    display: none;
-  }
   .menu-toggle {
     display: none;
   }
@@ -1342,6 +1380,7 @@ img {
 .mobile-social {
   --indent-vertical: 56px;
   --items: 4;
+
   height: 40px;
   padding-right: 60px;
 }
