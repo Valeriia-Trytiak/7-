@@ -90,7 +90,7 @@ img {
   padding: 0 16px;
   margin: 0 auto;
 
-  outline: 2px solid red;
+  /*outline: 2px solid red;*/
 }
 
 /*Tablet styles*/
@@ -905,6 +905,7 @@ img {
 /*Desktop styles*/
 @media only screen and (min-width: 1158px) {
   .page-footer {
+    padding-left: 0;
     padding-top: 100px;
     padding-bottom: 100px;
   }
@@ -919,18 +920,23 @@ img {
   .footer-container {
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .footer-container {
+    justify-content: flex-start;
     column-gap: 24px;
     row-gap: 72px;
-
-    align-items: baseline;
-    justify-content: center;
+    padding-left: 108px;
   }
 }
 
 /*Desktop styles*/
 @media only screen and (min-width: 1158px) {
   .footer-container {
-    gap: 0;
+    justify-content: center;
   }
 }
 .page-footer .logo {
@@ -1482,12 +1488,8 @@ img {
   margin-bottom: auto;
 }
 
-.mobile-menu-item {
-  padding-bottom: 40px;
-}
-
-.mobile-menu-item:last-child {
-  padding-bottom: 0px;
+.mobile-menu-item:not(:last-child) {
+  margin-bottom: 40px;
 }
 
 .mobile-link {
@@ -1503,9 +1505,19 @@ img {
 .mobile-contacts {
   margin-bottom: 48px;
 }
+
+.mobile-contacts-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
 .mobile-contacts .mobile-link {
-  padding-bottom: 40px;
   color: var(--acent-color);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 427px) {
+  .mobile-contacts .mobile-link {
+    font-size: 20px;
+  }
 }
 .mobile-contacts .mail {
   font-weight: 500;
@@ -1517,11 +1529,17 @@ img {
 .mobile-social {
   justify-content: flex-start;
   --items: 4;
-  padding-right: 60px;
   flex-wrap: nowrap;
-  --indent-vertical: 56px;
-  /*gap: calc((100% - 4 * 40px) / 3);*/
+  justify-content: space-between;
+  /*--indent-vertical: 56px;*/
   height: 40px;
+  width: 328px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 427px) {
+  .mobile-social {
+    gap: calc((100% - (var(--items)) * 40px) / ((var(--items) - 1)));
+  }
 }
 
 .mobile-social .social-icon {
